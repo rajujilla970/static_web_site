@@ -1,20 +1,19 @@
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: static-web-app
+  name: static-website
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: static-web-app
+      app: static-website
   template:
     metadata:
       labels:
-        app: static-web-app
+        app: static-website
     spec:
       containers:
-      - name: web-app
-        image: mydockerhubusername/static-web-app:latest
+      - name: nginx
+        image: static-website:latest
         ports:
         - containerPort: 80
