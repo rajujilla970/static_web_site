@@ -9,4 +9,4 @@ data:
     scrape_configs:
       - job_name: 'static-web-app'
         static_configs:
-          - targets: ['static-web-app-service:80']
+          - targets: ['static-website:80']
