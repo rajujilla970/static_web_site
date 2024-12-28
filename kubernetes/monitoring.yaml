@@ -1,15 +1,28 @@
-server:
-  persistentVolume:
-    enabled: true
-    size: 8Gi
-  
-alertmanager:
-  persistentVolume:
-    enabled: true
-    size: 2Gi
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prometheus
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prometheus
+  template:
+    metadata:
+      labels:
+        app: prometheus
+    spec:
+      containers:
+      - name: prometheus
+        image: prom/prometheus
+        ports:
+        - containerPort: 9090
+        volumeMounts:
+        - name: config
+          mountPath: /etc/prometheus
+          subPath: prometheus.yml
+      volumes:
+      - name: config
+        configMap:
+          name: prometheus-config
 
-nodeExporter:
-  enabled: true
-
-kubeStateMetrics:
-  enabled: true
