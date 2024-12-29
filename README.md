@@ -57,7 +57,7 @@ The kube-prometheus-stack chart also includes Grafana, which provides a nice das
 
 kubectl port-forward  service/prometheus-grafana 3000:80 --address 0.0.0.0
 
-Now, you can access Grafana by going to http://localhost:3000 in your browser.
+Now, you can access Grafana by going to http://ipaddress:3000 in your browser.
 
 After deployment, we can access the application using the LoadBalancer DNS provided by Kubernetes.
 
