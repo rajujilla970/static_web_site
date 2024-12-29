@@ -52,17 +52,15 @@ If you're using a local Kubernetes cluster, you can port-forward the Prometheus 
 
 kubectl port-forward service/prometheus-operated 9090:9090 --address 0.0.0.0
 
-6. Access Grafana UI (Optional)
+6. Access Grafana UI
 The kube-prometheus-stack chart also includes Grafana, which provides a nice dashboard for Prometheus metrics. To access Grafana, you can port-forward it as well:
 
 kubectl port-forward  service/prometheus-grafana 3000:80 --address 0.0.0.0
 
 Now, you can access Grafana by going to http://localhost:3000 in your browser.
 
-The default login credentials for Grafana are:
+After deployment, we can access the application using the LoadBalancer DNS provided by Kubernetes.
 
-Username: admin
-Password: prom-operator
+http://aa4956a05badc4d90be096d72883ee81-430633754.us-west-1.elb.amazonaws.com
 
-After deployment, you can access the application using the LoadBalancer IP provided by Kubernetes.
-Check the Prometheus & grafanna dashboard for monitoring.
+![image](https://github.com/user-attachments/assets/7142b7c8-1b77-484b-b005-7e2ecbe7e5f1)
