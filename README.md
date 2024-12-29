@@ -64,11 +64,5 @@ The default login credentials for Grafana are:
 Username: admin
 Password: prom-operator
 
-Apply the Prometheus configuration and deployment files:
-kubectl apply -f prometheus-configmap.yaml
-kubectl apply -f prometheus-deployment.yaml
-kubectl expose deployment prometheus --type=LoadBalancer --name=prometheus-service
-Access the Web Application
-
 After deployment, you can access the application using the LoadBalancer IP provided by Kubernetes.
-Check the Prometheus dashboard for monitoring.
+Check the Prometheus & grafanna dashboard for monitoring.
