@@ -1,6 +1,6 @@
 Steps for Deploying the static website
 
-Ensure you have the following tools installed:
+Ensure we have the following tools installed:
 Terraform
 Docker
 kubectl
