@@ -7,11 +7,11 @@ terraform {
     }
   }
 provider "aws" {
-  region  = us-east-1
+  region  = ap-south-1
 }
   backend "s3" {
     bucket         = "my-ews-baket1432"
-    region         = "us-east-1"
+    region         = "ap-south-1"
     key            = "terraform/terraform.tfstate"
     dynamodb_table = "Lock-Files"
     encrypt        = true
