@@ -4,6 +4,8 @@ metadata:
   name: static-website-service
 spec:
   type: LoadBalancer
+  selector:
+    app: static-website
   ports:
   - port: 80
     targetPort: 80
